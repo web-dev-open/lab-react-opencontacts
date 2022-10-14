@@ -2,18 +2,20 @@ import contacts from "./contacts.json";
 import "./App.css";
 
 function App() {
-
-  const wonOscarAward = contacts.filter(
-    function ( elem ) {
-      return elem.wonOscar;
+  
+  const checkOscar = (Boolean) => {
+    if(Boolean === 'true'){
+      return "🏆";
+  }
+  
+  }
+  
+  const checkEmmy = (Boolean) => {
+    if(Boolean === 'true'){
+      return "🏆";
     }
-  )
-
-  const wonEmmyAward = contacts.filter(
-    function ( elem ) {
-      return elem.wonEmmy;
-    }
-  )
+  
+  }
 
   return (
     <div className="App overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -43,7 +45,8 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {contacts.slice(0, 5).map((value, key) => {
+          {/* {contacts.slice(0, 5).map((value, key) => {  Iteration-1 */}
+          {contacts.map((value, key) => {
             return (
               <tr
                 key={key}
@@ -59,10 +62,10 @@ function App() {
                   {value.popularity}
                 </td>
                 <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
-                  {value.wonOscar}
+                  {checkOscar(`${value.wonOscar}`)}
                 </td>
                 <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
-                  {value.wonEmmy}
+                  {checkEmmy(`${value.wonOscar}`)}
                 </td>
               </tr>
             );
