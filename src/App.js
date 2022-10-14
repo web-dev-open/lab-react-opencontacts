@@ -2,6 +2,19 @@ import contacts from "./contacts.json";
 import "./App.css";
 
 function App() {
+
+  const wonOscarAward = contacts.filter(
+    function ( elem ) {
+      return elem.wonOscar;
+    }
+  )
+
+  const wonEmmyAward = contacts.filter(
+    function ( elem ) {
+      return elem.wonEmmy;
+    }
+  )
+
   return (
     <div className="App overflow-x-auto relative shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -16,6 +29,12 @@ function App() {
             </th>
             <th scope="col" className="py-3 px-6">
               Popularity
+            </th>
+            <th scope="col" className="py-3 px-6">
+              Won Oscar
+            </th>
+            <th scope="col" className="py-3 px-6">
+              Won Emmy
             </th>
             {/* <th scope="col" className="py-3 px-6">
                     <span className="sr-only">Image</span>
@@ -38,6 +57,12 @@ function App() {
                 </td>
                 <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
                   {value.popularity}
+                </td>
+                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
+                  {value.wonOscar}
+                </td>
+                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
+                  {value.wonEmmy}
                 </td>
               </tr>
             );
