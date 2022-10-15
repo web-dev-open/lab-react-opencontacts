@@ -46,7 +46,10 @@ function App() {
         </thead>
         <tbody>
           {/* {contacts.slice(0, 5).map((value, key) => {  Iteration-1 */}
-          {contacts.map((value, key) => {
+          {/* {contacts.slice(0, 5).map((value, key) => {  Iteration-2 with 5 contacts */}
+          {/* {contacts.map((value, key) => { Iteration-2 with all contacts */}
+          {contacts.map((value, key) => { 
+          {/* {contacts.slice(0, 5).map((value, key) => { */}
             return (
               <tr
                 key={key}
@@ -65,7 +68,7 @@ function App() {
                   {checkOscar(`${value.wonOscar}`)}
                 </td>
                 <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
-                  {checkEmmy(`${value.wonOscar}`)}
+                  {checkEmmy(`${value.wonEmmy}`)}
                 </td>
               </tr>
             );
