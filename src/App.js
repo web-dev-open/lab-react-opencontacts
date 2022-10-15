@@ -48,26 +48,27 @@ function App() {
           {/* {contacts.slice(0, 5).map((value, key) => {  Iteration-1 */}
           {/* {contacts.slice(0, 5).map((value, key) => {  Iteration-2 with 5 contacts */}
           {/* {contacts.map((value, key) => { Iteration-2 with all contacts */}
-          {contacts.map((value, key) => { 
           {/* {contacts.slice(0, 5).map((value, key) => { */}
+          {contacts.map((value, key) => { 
+          
             return (
               <tr
                 key={key}
                 className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
               >
-                <td className="p-4 w-32">
-                  <img src={value.pictureUrl} alt="" />
+                <td className=" p-4 w-32 border ">
+                  <img src={value.pictureUrl} alt="" className="rounded-full border" />
                 </td>
-                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
+                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white border">
                   {value.name}
                 </td>
-                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
+                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white border">
                   {value.popularity}
                 </td>
-                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
+                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white border">
                   {checkOscar(`${value.wonOscar}`)}
                 </td>
-                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
+                <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white border">
                   {checkEmmy(`${value.wonEmmy}`)}
                 </td>
               </tr>
