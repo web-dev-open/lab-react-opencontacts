@@ -55,16 +55,21 @@
 // export default Test;
 
 
-const checkOscar = (Boolean) => {
-  if(`${elem.wonOscar}` === Boolean){
-    return "🏆";
+// const checkOscar = (Boolean) => {
+//   if(`${elem.wonOscar}` === Boolean){
+//     return "🏆";
+// }
+
+// }
+
+// const checkEmmy = (Boolean) => {
+//   if(`${elem.wonEmmy}` === Boolean){
+//     return "🏆";
+//   }
+
+// }
+
+const getRandomEle = (array) => {
+  return array[Math.floor(Math.random)*array.length];
 }
 
-}
-
-const checkEmmy = (Boolean) => {
-  if(`${elem.wonEmmy}` === Boolean){
-    return "🏆";
-  }
-
-}

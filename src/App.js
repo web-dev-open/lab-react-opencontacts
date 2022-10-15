@@ -1,7 +1,52 @@
-import contacts from "./contacts.json";
+import contactsJson from "./contacts.json";
 import "./App.css";
+import { useState } from "react";
+
 
 function App() {
+
+  let [contacts, setContacts] = useState(contactsJson.slice(0, 5))
+
+  const getRandomEle = (array) => {
+    return array[Math.floor(Math.random)*array.length];
+  }
+  
+  const addElement = (getRandomEle) => {
+    console.log("Add button was clicked!!")
+  }
+  
+  const sortByName = () => {
+    let cloneContacts = structuredClone(contacts)
+    cloneContacts.sort((a, b) => {
+      if(a.name > b.name){
+        return 1
+      } else if(a.name < b.name){
+        return -1
+      } else {
+        return 0
+      }
+    }).slice(0,5)
+    setContacts(cloneContacts)
+  }
+
+  const sortByPopularity = () => {
+    let cloneContacts1 = structuredClone(contacts)
+    cloneContacts1.sort((a, b) => {
+      if(a.popularity > b.popularity){
+        return 1
+      } else if(a.name < b.name){
+        return -1
+      } else {
+        return 0
+      }
+    }).slice(0,5)
+    setContacts(cloneContacts1)
+  }
+
+  const removeContact = () => {
+    console.log("removeContact button was clicked!!")
+  }
+
   const checkOscar = (Boolean) => {
     if (Boolean === "true") {
       return "🏆";
@@ -14,27 +59,29 @@ function App() {
     }
   };
 
+
+
   return (
     <div className="App overflow-x-auto relative shadow-md sm:rounded-lg mt-2">
-      <button
+      <button onClick={addElement}
         type="button"
         class="text-white uppercase bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 "
       >
         Add Random Contact
       </button>
-      <button
+      <button onClick={sortByName}
         type="button"
         class="text-white uppercase bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
       >
         Sort By Name
       </button>
-      <button
+      <button onClick={sortByPopularity}
         type="button"
         class="text-white uppercase bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
       >
         Sort By Popularity
       </button>
-      <button
+      <button onClick={removeContact}
         type="button"
         class="text-white uppercase bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
       >
@@ -70,7 +117,8 @@ function App() {
           {/* {contacts.slice(0, 5).map((value, key) => {  Iteration-2 with 5 contacts */}
           {/* {contacts.map((value, key) => { Iteration-2 with all contacts */}
           {/* {contacts.slice(0, 5).map((value, key) => { */}
-          {contacts.map((value, key) => {
+          {
+          contacts.map((value, key) => { 
             return (
               <tr
                 key={key}
