@@ -4,13 +4,17 @@ import { useState } from "react";
 
 function App() {
   let [contacts, setContacts] = useState(contactsJson.slice(0, 5));
+  let [randomContacts, setrandomContacts] = useState(contactsJson.slice(6));
 
-  const getRandomEle = (array) => {
-    return array[Math.floor(Math.random) * array.length];
-  };
+  // const getRandomEle = (array) => {
+  //   return array[Math.floor(Math.random) * array.length];
+  // };
 
-  const addElement = (getRandomEle) => {
-    console.log("Add button was clicked!!");
+  const addElement = () => {
+    let contactsForRandomElement = structuredClone(randomContacts);
+    let randomIdx = Math.floor(Math.random()*contactsForRandomElement.length);
+    let randomContact = contactsForRandomElement[randomIdx];
+    setContacts([...contacts, randomContact ]);
   };
 
   const sortByName = () => {
@@ -64,7 +68,7 @@ function App() {
   };
 
   return (
-    <div className="App overflow-x-auto relative shadow-md sm:rounded-lg mt-2">
+    <div className="App overflow-x-auto scrollbar-hide relative shadow-md sm:rounded-lg mt-2">
       <button
         onClick={addElement}
         type="button"
