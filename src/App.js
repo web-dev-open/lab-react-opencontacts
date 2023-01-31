@@ -14,9 +14,18 @@ function App() {
   function addRandomCeleb() {
     let randomCeleb = contacts[Math.floor(Math.random() * contacts.length)];
 
-    setCelebs((prevValue) => {
-      return [...prevValue, randomCeleb];
-    });
+    if (celebs.includes(randomCeleb)) {
+      let randomCeleb2 = contacts[Math.floor(Math.random() * contacts.length)];
+      if (!celebs.includes(randomCeleb2)) {
+        setCelebs((prevValue) => {
+          return [...prevValue, randomCeleb2];
+        });
+      }
+    } else {
+      setCelebs((prevValue) => {
+        return [...prevValue, randomCeleb];
+      });
+    }
   }
 
   const handleSortPop = () => {
