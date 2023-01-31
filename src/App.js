@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import contacts from "./contacts.json";
 
 function App() {
+  let first5Contacts = contacts.slice(0, 5);
+  // first5Contacts.push("Won an Oscar");
+  console.log(first5Contacts);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <table>
+        <tbody>
+          <tr>
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Popularity</th>
+          </tr>
+          {first5Contacts.map((item, i) => {
+            return (
+              <tr key={i}>
+                <td>
+                  <img alt="celeb" src={item.pictureUrl} />
+                </td>
+                <td>{item.name}</td>
+                {console.log(typeof item.popularity)}
+                <td>{item.popularity.toString().slice(0, 5)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
