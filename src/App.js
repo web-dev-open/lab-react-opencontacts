@@ -19,9 +19,45 @@ function App() {
     });
   }
 
+  const handleSortPop = () => {
+    let cloneCelebs = [...celebs];
+    cloneCelebs.sort((a, b) => {
+      if (a.popularity < b.popularity) {
+        return 1;
+      } else if (a.popularity > b.popularity) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+    setCelebs(cloneCelebs);
+  };
+
+  const handleSortName = () => {
+    let cloneCelebs = [...celebs];
+    cloneCelebs.sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      } else if (a.name < b.name) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+    setCelebs(cloneCelebs);
+  };
+
+  function handleDelete(i) {
+    let cloneCelebs = [...celebs];
+    cloneCelebs.splice(i, 1);
+    setCelebs(cloneCelebs);
+  }
+
   return (
     <div className="App">
       <button onClick={addRandomCeleb}>Add Random Contact</button>
+      <button onClick={handleSortPop}>Sort by popularity</button>
+      <button onClick={handleSortName}>Sort by name</button>
       <table>
         <tbody>
           <tr>
@@ -31,6 +67,7 @@ function App() {
 
             <th>Won Oscar</th>
             <th>Won Emmy</th>
+            <th>Actions</th>
           </tr>
           {celebs.map((item, i) => {
             return (
@@ -48,6 +85,9 @@ function App() {
                 {/* {console.log(typeof item.wonOscar)} */}
                 <td>{item.wonOscar && <img src={trophy} alt="trophy" />}</td>
                 <td>{item.wonEmmy && <img src={trophy} alt="trophy" />}</td>
+                <td>
+                  <button onClick={() => handleDelete(i)}>Delete</button>
+                </td>
               </tr>
             );
           })}
