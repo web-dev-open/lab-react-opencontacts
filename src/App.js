@@ -1,14 +1,27 @@
+import { useState } from "react";
 import "./App.css";
 import contacts from "./contacts.json";
 import trophy from "./trophy.png";
 
 function App() {
-  let first5Contacts = contacts.slice(0, 6);
+  let first5Contacts = contacts.slice(0, 10);
+  const [celebs, setCelebs] = useState(first5Contacts);
+  // console.log(celebs);
+
   // first5Contacts.push("Won an Oscar");
-  console.log(first5Contacts);
+  // console.log(first5Contacts);
+
+  function addRandomCeleb() {
+    let randomCeleb = contacts[Math.floor(Math.random() * contacts.length)];
+
+    setCelebs((prevValue) => {
+      return [...prevValue, randomCeleb];
+    });
+  }
 
   return (
     <div className="App">
+      <button onClick={addRandomCeleb}>Add Random Contact</button>
       <table>
         <tbody>
           <tr>
@@ -19,7 +32,7 @@ function App() {
             <th>Won Oscar</th>
             <th>Won Emmy</th>
           </tr>
-          {first5Contacts.map((item, i) => {
+          {celebs.map((item, i) => {
             return (
               <tr key={i}>
                 <td>
@@ -32,7 +45,7 @@ function App() {
                     ? item.popularity.toString().slice(0, 4)
                     : item.popularity.toString().slice(0, 5)}
                 </td>
-                {console.log(typeof item.wonOscar)}
+                {/* {console.log(typeof item.wonOscar)} */}
                 <td>{item.wonOscar && <img src={trophy} alt="trophy" />}</td>
                 <td>{item.wonEmmy && <img src={trophy} alt="trophy" />}</td>
               </tr>
