@@ -58,11 +58,13 @@ function App() {
   function handleAdd(){
 
   const nc = contacts[Math.floor(Math.random()*contacts.length)]
+ 
   const newContact =[    
     ...rcontact,
     nc,  
   ]
-  setRcontact(newContact)    
+  let uniq = [...new Set(newContact)];
+  setRcontact(uniq)    
   }
 
   function handleDelete(ContactId){
