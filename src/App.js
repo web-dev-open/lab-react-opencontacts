@@ -54,8 +54,8 @@ function App() {
               </td>
               <td>{contact.name}</td>
               <td>{contact.popularity}</td>
-              <td>{contact.wonOscar ? '🏆' : 'bruuh'}</td>
-              <td>{contact.wonEmmy ? '🏆' : 'bruuuuuuh'}</td>
+              <td>{contact.wonOscar ? '🏆' : 'no'}</td>
+              <td>{contact.wonEmmy ? '🏆' : 'no'}</td>
               <td>
                 <button onClick={() => deleteContact(contact.id)}>Delete</button>
               </td>
