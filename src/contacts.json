@@ -1,4 +1,20 @@
 [
+  {
+    "name": "Arnold Schwarzenegger",
+    "pictureUrl": "https://image.tmdb.org/t/p/w500/sOkCXc9xuSr6v7mdAq9LwEBje68.jpg",
+    "popularity": 18.216362,
+    "id": "4fe4d8ef-0fac-4bd9-8c02-ed89b668b2a9",
+    "wonOscar": false,
+    "wonEmmy": true
+  },
+  {
+    "name": "Matt Damon",
+    "pictureUrl": "https://image.tmdb.org/t/p/w500/elSlNgV8xVifsbHpFsqrPGxJToZ.jpg",
+    "popularity": 9.500475,
+    "id": "fd998a8f-1c9f-4ad8-8a03-45f93b630aa1",
+    "wonOscar": true,
+    "wonEmmy": false
+  },
     {
       "name": "Idris Elba",
       "pictureUrl": "https://image.tmdb.org/t/p/w500/d9NkfCwczP0TjgrjpF94jF67SK8.jpg",
@@ -39,14 +55,7 @@
       "wonOscar": false,
       "wonEmmy": false
     },
-    {
-      "name": "Matt Damon",
-      "pictureUrl": "https://image.tmdb.org/t/p/w500/elSlNgV8xVifsbHpFsqrPGxJToZ.jpg",
-      "popularity": 9.500475,
-      "id": "fd998a8f-1c9f-4ad8-8a03-45f93b630aa1",
-      "wonOscar": true,
-      "wonEmmy": false
-    },
+
     {
       "name": "David Harbour",
       "pictureUrl": "https://image.tmdb.org/t/p/w500/chPekukMF5SNnW6b22NbYPqAStr.jpg",
@@ -168,14 +177,7 @@
       "wonOscar": true,
       "wonEmmy": false
     },
-    {
-      "name": "Arnold Schwarzenegger",
-      "pictureUrl": "https://image.tmdb.org/t/p/w500/sOkCXc9xuSr6v7mdAq9LwEBje68.jpg",
-      "popularity": 18.216362,
-      "id": "4fe4d8ef-0fac-4bd9-8c02-ed89b668b2a9",
-      "wonOscar": false,
-      "wonEmmy": true
-    },
+ 
     {
       "name": "Ana de Armas",
       "pictureUrl": "https://image.tmdb.org/t/p/w500/nwS5UfMT0XUA6JEPwmt0jbNDa7B.jpg",
