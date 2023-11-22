@@ -54,7 +54,7 @@ function App() {
       <button onClick={addRandomContact}>Add Random Contact</button>
       <button onClick={sortByName}>Sort by Name</button>
       <button onClick={sortByPopularity}>Sort by Popularity</button>
-      <table>
+      <table className="contacts-table">
         <thead>
           <tr>
             <th>Picture</th>
@@ -76,7 +76,7 @@ function App() {
               <td>{contact.wonOscar ? '🏆' : '-'}</td>
               <td>{contact.wonEmmy ? '🏆' : '-'}</td>
               <td>
-                <button onClick={() => deleteContact(contact.id)}>Delete</button>
+			  <button className="delete-btn" onClick={() => deleteContact(contact.id)}>Delete</button>
               </td>
             </tr>
           ))}
