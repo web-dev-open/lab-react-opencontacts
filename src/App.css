@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+img{
+  width: 200px;
+  height:300px
+}
+table{
+  width: 1100px;
+  margin-inline: auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td{
+  font-size: 25px;
+  text-align: center;
+  vertical-align: bottom;
+  border-bottom: 1px solid #282c34;
+  padding:8px;
+}
+tr:nth-child(even){
+background-color: chocolate;
+}
+tr:hover{
+  background-color:chartreuse;
+}
+button{
+  background-color: #04AA6D;
+  font-size: 16px;
+  padding: 14px 40px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  margin-right: 30px;
+}
+button:hover{
+  color: white;
+}
