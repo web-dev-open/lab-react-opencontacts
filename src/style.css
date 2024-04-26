@@ -1,0 +1,67 @@
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(lights.jpg);
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: xx-large;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: rgb(244, 240, 240);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: rgb(0, 0, 56);
+  color: #fff;
+}
+
+td img {
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: rgb(0, 0, 56);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(2, 2, 166);
+}
+
+button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+button:focus {
+  outline: none;
+}
